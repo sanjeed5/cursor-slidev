@@ -33,7 +33,7 @@ Common frontmatter options:
 *   `info`: Additional information about the presentation (Markdown enabled).
 *   `theme`: Specifies the theme (e.g., `seriph`, `default`).
 *   `background`: Sets the background image or color for a slide.
-    *   Example: `background: https://source.unsplash.com/collection/94734566/1920x1080`
+    *   Example: `background: https://picsum.photos/1920/1080`
 *   `class`: Applies UnoCSS utility classes to the slide.
     *   Example: `class: text-center`
 *   `layout`: Defines the layout for the slide (e.g., `two-cols`, `image-right`, `center`).
