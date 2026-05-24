@@ -63,10 +63,9 @@ Requires `CURSOR_API_KEY`. Test before events.
 
 ## Deploy
 
-- **Primary:** Cloudflare Pages → https://cursor.sanjeed.in (`pnpm build`, base `/`)
-- **Legacy GitHub Pages subpath:** `pnpm build:gh` (base `/cursor-slidev/`)
-
-`public/_redirects` — SPA fallback for presenter mode and deep links.
+- **Primary:** Cloudflare Pages → https://cursor.sanjeed.in
+- **CLI:** `pnpm cf:login` once, then `pnpm cf:deploy`
+- **Legacy GitHub Pages subpath:** `pnpm build:gh`
 
 ## Promos
 

@@ -10,7 +10,9 @@
     "export:pdf": "slidev export slides.md --dark --output cursor-community-talk",
     "sync:social": "node scripts/fetch-social.mjs",
     "render:tweets": "node scripts/render-tweet-screenshots.mjs",
-    "render:tweets:sample": "node scripts/render-tweet-screenshots.mjs --sample"
+    "render:tweets:sample": "node scripts/render-tweet-screenshots.mjs --sample",
+    "cf:login": "wrangler login",
+    "cf:deploy": "node scripts/deploy-cf-pages.mjs"
   },
   "dependencies": {
     "@slidev/cli": "^51.7.1",
@@ -21,7 +23,8 @@
   },
   "devDependencies": {
     "playwright": "^1.60.0",
-    "playwright-chromium": "^1.60.0"
+    "playwright-chromium": "^1.60.0",
+    "wrangler": "^4.94.0"
   },
   "packageManager": "pnpm@10.7.0+sha512.6b865ad4b62a1d9842b61d674a393903b871d9244954f652b8842c2b553c72176b278f64c463e52d40fff8aba385c235c8c9ecf5cc7de4fd78b8bb6d49633ab6"
 }

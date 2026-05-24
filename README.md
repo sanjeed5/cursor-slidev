@@ -54,32 +54,40 @@ Software Factory — Supervisor + Plan-and-Execute + Reflexion via `@cursor/sdk`
 
 **Live deck:** https://cursor.sanjeed.in
 
-Hosted on Cloudflare Pages at the repo root (`base: /`). Push to `main` triggers a deploy when the project is connected in Cloudflare.
+### CLI (recommended)
 
-### One-time Cloudflare setup
+One-time auth in your terminal:
 
-1. [Cloudflare Dashboard](https://dash.cloudflare.com) → **Workers & Pages** → **Create** → **Pages** → **Connect to Git**
-2. Select this repo (`cursor-slidev`), branch `main`
-3. Build settings:
+```bash
+pnpm install
+pnpm cf:login    # opens browser — approve Cloudflare OAuth
+```
 
-| Setting | Value |
-|---------|--------|
-| Framework preset | None |
-| Build command | `corepack enable && pnpm install && pnpm build` |
-| Build output directory | `dist` |
-| Node.js version | `20` |
+Deploy (build + upload + custom domain if token set):
 
-4. **Custom domains** → Add `cursor.sanjeed.in`
-5. In DNS for `sanjeed.in` (Cloudflare): add **CNAME** `cursor` → `<your-project>.pages.dev` (Cloudflare usually creates this when you add the custom domain)
+```bash
+pnpm cf:deploy
+```
 
-`public/_redirects` enables SPA routing for `/presenter` and slide deep links.
+Optional env vars:
+
+| Variable | Default | Purpose |
+|----------|---------|---------|
+| `CF_PAGES_PROJECT` | `cursor-slidev` | Pages project name |
+| `CF_CUSTOM_DOMAIN` | `cursor.sanjeed.in` | Custom domain |
+| `CLOUDFLARE_API_TOKEN` | — | Auto-add custom domain via API |
+| `CLOUDFLARE_ACCOUNT_ID` | from `wrangler whoami` | Required with API token |
+
+Presenter mode: `https://cursor.sanjeed.in/presenter`
+
+### Dashboard alternative
+
+Connect Git in [Cloudflare Pages](https://dash.cloudflare.com) → build command `corepack enable && pnpm install && pnpm build` → output `dist` → add custom domain `cursor.sanjeed.in`.
 
 ### Legacy GitHub Pages
 
-If you ever need the old subpath host again:
-
 ```bash
-pnpm build:gh
+pnpm build:gh   # base /cursor-slidev/ — old gh-pages subpath
 ```
 
 ## Agent context
