@@ -20,7 +20,7 @@ components/         ← Vue slide components
 public/             ← images, tweet PNGs, lockups (Slidev static assets)
 slidev-theme-cursor/ ← linked theme
 demo/               ← live @cursor/sdk terminal demo (separate Node project)
-vite.config.ts      ← deploy base path
+vite.config.ts      ← deploy base path (default `/` for Cloudflare Pages)
 ```
 
 ## Presenter
@@ -50,16 +50,37 @@ npm run demo
 
 Software Factory — Supervisor + Plan-and-Execute + Reflexion via `@cursor/sdk`.
 
-## Deploy
+## Deploy (Cloudflare Pages)
 
-**Live deck:** https://sanjeed5.github.io/cursor-slidev/
+**Live deck:** https://cursor.sanjeed.in
 
-Push to `main` → GitHub Pages (see `.github/workflows/deploy.yml`).
+Hosted on Cloudflare Pages at the repo root (`base: /`). Push to `main` triggers a deploy when the project is connected in Cloudflare.
 
-| Host | Build command |
-|------|---------------|
-| GitHub Pages (`/cursor-slidev/`) | `pnpm build` (default) |
-| Cloudflare Pages / root domain | `SLIDEV_BASE=/ pnpm build` |
+### One-time Cloudflare setup
+
+1. [Cloudflare Dashboard](https://dash.cloudflare.com) → **Workers & Pages** → **Create** → **Pages** → **Connect to Git**
+2. Select this repo (`cursor-slidev`), branch `main`
+3. Build settings:
+
+| Setting | Value |
+|---------|--------|
+| Framework preset | None |
+| Build command | `corepack enable && pnpm install && pnpm build` |
+| Build output directory | `dist` |
+| Node.js version | `20` |
+
+4. **Custom domains** → Add `cursor.sanjeed.in`
+5. In DNS for `sanjeed.in` (Cloudflare): add **CNAME** `cursor` → `<your-project>.pages.dev` (Cloudflare usually creates this when you add the custom domain)
+
+`public/_redirects` enables SPA routing for `/presenter` and slide deep links.
+
+### Legacy GitHub Pages
+
+If you ever need the old subpath host again:
+
+```bash
+pnpm build:gh
+```
 
 ## Agent context
 

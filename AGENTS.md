@@ -63,8 +63,10 @@ Requires `CURSOR_API_KEY`. Test before events.
 
 ## Deploy
 
-- **GitHub Pages** (default): `pnpm build` → base `/cursor-slidev/` via `vite.config.ts`
-- **Root hosting** (Cloudflare Pages, custom domain): `SLIDEV_BASE=/ pnpm build`
+- **Primary:** Cloudflare Pages → https://cursor.sanjeed.in (`pnpm build`, base `/`)
+- **Legacy GitHub Pages subpath:** `pnpm build:gh` (base `/cursor-slidev/`)
+
+`public/_redirects` — SPA fallback for presenter mode and deep links.
 
 ## Promos
 

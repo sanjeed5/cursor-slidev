@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "build": "slidev build",
+    "build:gh": "SLIDEV_BASE=/cursor-slidev/ slidev build",
     "dev": "slidev --open",
     "export": "slidev export slides.md --format png --dark --output slides-export",
     "export:pdf": "slidev export slides.md --dark --output cursor-community-talk",
