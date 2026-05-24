@@ -25,7 +25,7 @@ vite.config.ts      ← deploy base path
 
 ## Presenter
 
-- **Sanjeed** — AI engineer & consultant
+- **Sanjeed** — AI Engineer/Consultant
 
 Photo: `public/sanjeed.jpg`
 

@@ -18,7 +18,7 @@ const social = [
 
       <div class="presenter-body">
         <h1 class="presenter-name">Sanjeed</h1>
-        <p class="presenter-role">AI engineer & consultant</p>
+        <p class="presenter-role">AI Engineer/Consultant</p>
         <a href="https://sanjeed.in" target="_blank" class="presenter-site link-plain">sanjeed.in</a>
       </div>
 

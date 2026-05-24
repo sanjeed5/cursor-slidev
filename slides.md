@@ -1,5 +1,5 @@
 ---
-title: What's New in Cursor May 2026
+title: What's New in Cursor — May 2026
 info: |
   ## Cursor talk deck
 
@@ -17,9 +17,9 @@ drawings:
 ---
 
 <CoverHero
-  title="What's New in Cursor May 2026"
-  name="Sanjeed"
-  subtitle="AI engineer & consultant"
+  title="What's New in Cursor"
+  subtitle="May 2026"
+  name="Sanjeed - AI Engineer/Consultant"
 />
 
 ---
