@@ -26,9 +26,9 @@
     "colorSchema": "both",
     "defaults": {
       "fonts": {
-        "sans": "Inter",
-        "mono": "Fira Code",
-        "weights": "400,500,600,700,900"
+        "sans": "Cursor Gothic",
+        "mono": "ui-monospace",
+        "weights": "400,700"
       }
     }
   }

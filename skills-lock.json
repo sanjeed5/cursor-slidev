@@ -1,0 +1,125 @@
+{
+  "version": 1,
+  "skills": {
+    "slidev-click-animations": {
+      "source": "yoanbernabeu/slidev-skills",
+      "sourceType": "github",
+      "skillPath": "skills/animations/slidev-click-animations/SKILL.md",
+      "computedHash": "b052abe569f1f31e270560da609809b362e791b26573953bd9eb32cacf16439b"
+    },
+    "slidev-code-blocks": {
+      "source": "yoanbernabeu/slidev-skills",
+      "sourceType": "github",
+      "skillPath": "skills/code/slidev-code-blocks/SKILL.md",
+      "computedHash": "b27be9d423ba4b473bd11fc12c1446bc3340c251e72e13bdf50e7ce8f1ea1e60"
+    },
+    "slidev-components": {
+      "source": "yoanbernabeu/slidev-skills",
+      "sourceType": "github",
+      "skillPath": "skills/content/slidev-components/SKILL.md",
+      "computedHash": "b36663662e74d0298cd1df0059bfdbdcc96dff006dc5d12227216ea445ff6a20"
+    },
+    "slidev-deployment": {
+      "source": "yoanbernabeu/slidev-skills",
+      "sourceType": "github",
+      "skillPath": "skills/export/slidev-deployment/SKILL.md",
+      "computedHash": "d2874baed077945731ebfaa1b0049dc9b60925ae456678c1bac08e435f4493f1"
+    },
+    "slidev-drawings": {
+      "source": "yoanbernabeu/slidev-skills",
+      "sourceType": "github",
+      "skillPath": "skills/presentation/slidev-drawings/SKILL.md",
+      "computedHash": "43e1cb79f20788922fa4527fea283c0315f6d80b35cd93ee69b70e7edf8646a5"
+    },
+    "slidev-export": {
+      "source": "yoanbernabeu/slidev-skills",
+      "sourceType": "github",
+      "skillPath": "skills/export/slidev-export/SKILL.md",
+      "computedHash": "fed4bacfb266c49490895019972b3815ee6ae1e23aa5f51f730200357d0dd96b"
+    },
+    "slidev-latex": {
+      "source": "yoanbernabeu/slidev-skills",
+      "sourceType": "github",
+      "skillPath": "skills/visuals/slidev-latex/SKILL.md",
+      "computedHash": "68c6a3306a72d0962bead23dd51d5ecc4a52186ccd114a24d5475fed4dd83d42"
+    },
+    "slidev-layouts": {
+      "source": "yoanbernabeu/slidev-skills",
+      "sourceType": "github",
+      "skillPath": "skills/content/slidev-layouts/SKILL.md",
+      "computedHash": "18b4b5e0ccd03e6dd0a0d47d660c9a3bc26ec6e0ed86ec8aba4243af6e290f2d"
+    },
+    "slidev-magic-move": {
+      "source": "yoanbernabeu/slidev-skills",
+      "sourceType": "github",
+      "skillPath": "skills/code/slidev-magic-move/SKILL.md",
+      "computedHash": "8c13a542a2b96ad13dabbc98a3adf9eb22a2a39288df33b42698783c27fb9b23"
+    },
+    "slidev-mermaid": {
+      "source": "yoanbernabeu/slidev-skills",
+      "sourceType": "github",
+      "skillPath": "skills/visuals/slidev-mermaid/SKILL.md",
+      "computedHash": "b6e886acfdf3cf699762c3775fc5a31db7a458780c580cd362c811abccdd0221"
+    },
+    "slidev-monaco-editor": {
+      "source": "yoanbernabeu/slidev-skills",
+      "sourceType": "github",
+      "skillPath": "skills/code/slidev-monaco-editor/SKILL.md",
+      "computedHash": "e3ca933fa67896e93e68a25a1cef8f058cfc5245e8173349c4d80724097532f1"
+    },
+    "slidev-navigation": {
+      "source": "yoanbernabeu/slidev-skills",
+      "sourceType": "github",
+      "skillPath": "skills/presentation/slidev-navigation/SKILL.md",
+      "computedHash": "7f491180238e08a040000b1d56d54f89c09d699e1b8118ca1838c57543a3182b"
+    },
+    "slidev-plantuml": {
+      "source": "yoanbernabeu/slidev-skills",
+      "sourceType": "github",
+      "skillPath": "skills/visuals/slidev-plantuml/SKILL.md",
+      "computedHash": "1c3ef2e6ad0435348e99ccf52cb3a4aa12e934bb33924120195c49c79b8c8199"
+    },
+    "slidev-presenter-mode": {
+      "source": "yoanbernabeu/slidev-skills",
+      "sourceType": "github",
+      "skillPath": "skills/presentation/slidev-presenter-mode/SKILL.md",
+      "computedHash": "9ce9470fd71fa8c1b3851deaadcbd808f113bec50db9800b67f519eb66aabc08"
+    },
+    "slidev-project-structure": {
+      "source": "yoanbernabeu/slidev-skills",
+      "sourceType": "github",
+      "skillPath": "skills/getting-started/slidev-project-structure/SKILL.md",
+      "computedHash": "6afcf430022cb48c8d61d067499794e7c485bb61622f254a7ea33765e8feb18c"
+    },
+    "slidev-quick-start": {
+      "source": "yoanbernabeu/slidev-skills",
+      "sourceType": "github",
+      "skillPath": "skills/getting-started/slidev-quick-start/SKILL.md",
+      "computedHash": "cde63d14cd1c8f85d2b5b403d248f66762d4f36d7043dafdd193e971a821ff8e"
+    },
+    "slidev-styling": {
+      "source": "yoanbernabeu/slidev-skills",
+      "sourceType": "github",
+      "skillPath": "skills/customization/slidev-styling/SKILL.md",
+      "computedHash": "398269f9565bd7632e85cb4b6b1b3b1ca596b8cc484f809e287afc6091fa5818"
+    },
+    "slidev-syntax-guide": {
+      "source": "yoanbernabeu/slidev-skills",
+      "sourceType": "github",
+      "skillPath": "skills/content/slidev-syntax-guide/SKILL.md",
+      "computedHash": "e5e995b1928eefcdc043ee45d566bbf5fc42832b69caa06b5dadd5b68eeb51ae"
+    },
+    "slidev-themes": {
+      "source": "yoanbernabeu/slidev-skills",
+      "sourceType": "github",
+      "skillPath": "skills/customization/slidev-themes/SKILL.md",
+      "computedHash": "6866dd45a702349eba5ace2a2a3858d65bba0da5466cff4fee593ba898543f28"
+    },
+    "slidev-transitions": {
+      "source": "yoanbernabeu/slidev-skills",
+      "sourceType": "github",
+      "skillPath": "skills/animations/slidev-transitions/SKILL.md",
+      "computedHash": "727099024479a7aeb5a903630344279d9db9c74c794b2de9bd53a768dfea56cd"
+    }
+  }
+}

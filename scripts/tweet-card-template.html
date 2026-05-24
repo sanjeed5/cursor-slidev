@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        width: 600px;
+        background: #000;
+        color: #e7e9ea;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Helvetica, Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .tweet {
+        width: 600px;
+        padding: 12px 16px 14px;
+        background: #000;
+      }
+
+      .row {
+        display: flex;
+        gap: 12px;
+        align-items: flex-start;
+      }
+
+      .avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        flex-shrink: 0;
+        object-fit: cover;
+        background: #333;
+      }
+
+      .avatar-fallback {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-weight: 700;
+        font-size: 16px;
+      }
+
+      .main {
+        flex: 1;
+        min-width: 0;
+      }
+
+      .header-row {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 12px;
+      }
+
+      .header-text {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 4px;
+        line-height: 20px;
+        min-width: 0;
+      }
+
+      .name {
+        color: #e7e9ea;
+        font-weight: 700;
+        font-size: 15px;
+      }
+
+      .verified {
+        width: 18px;
+        height: 18px;
+        flex-shrink: 0;
+      }
+
+      .handle,
+      .dot,
+      .time {
+        color: #71767b;
+        font-size: 15px;
+      }
+
+      .header-actions {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex-shrink: 0;
+        color: #71767b;
+      }
+
+      .header-actions svg {
+        width: 18px;
+        height: 18px;
+        fill: currentColor;
+      }
+
+      .text {
+        color: #e7e9ea;
+        font-size: 15px;
+        line-height: 20px;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        margin-top: 2px;
+      }
+
+      .actions {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 12px;
+        width: 100%;
+        max-width: 425px;
+      }
+
+      .action {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        color: #71767b;
+        font-size: 13px;
+        line-height: 1;
+      }
+
+      .action svg {
+        width: 18.75px;
+        height: 18.75px;
+        fill: currentColor;
+      }
+
+      .action.is-repost {
+        color: #00ba7c;
+      }
+
+      .action.is-like {
+        color: #f91880;
+      }
+
+      .action.is-like svg {
+        fill: #f91880;
+      }
+    </style>
+  </head>
+  <body>
+    <article class="tweet">
+      <div class="row">
+        <div id="avatar"></div>
+        <div class="main">
+          <div class="header-row">
+            <div class="header-text">
+              <span class="name" id="name"></span>
+              <span id="verified"></span>
+              <span class="handle" id="handle"></span>
+              <span class="dot">·</span>
+              <span class="time" id="time"></span>
+            </div>
+            <div class="header-actions">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+                />
+              </svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M3 12c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2zm9 0c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2zm9 0c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2-.9-2-2z"
+                />
+              </svg>
+            </div>
+          </div>
+          <div class="text" id="text"></div>
+          <div class="actions">
+            <span class="action" id="action-reply">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M1.751 10c0-4.42 3.584-8 8.005-8h4.366c4.49 0 8.129 3.64 8.129 8.13 0 2.96-1.607 5.68-4.196 7.11l-8.054 4.46v-3.08h-.067c-4.49.1-8.183-3.51-8.183-8.01zm8.005-6c-3.317 0-6.005 2.69-6.006 6 0 3.37 2.77 6.08 6.138 6.01l.351-.01h1.761v2.3l5.087-2.81c1.951-1.08 3.163-3.13 3.163-5.36 0-3.39-2.744-6.13-6.129-6.13H9.756z"
+                />
+              </svg>
+              <span id="replies"></span>
+            </span>
+            <span class="action" id="action-repost">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M4.5 3.88l4.432 4.14-1.364 1.46L5.5 7.55V16c0 1.1.896 2 2 2H13v2H7.5c-2.209 0-4-1.79-4-4V7.55L1.432 9.48.068 8.02 4.5 3.88zM16.5 6H11V4h5.5c2.209 0 4 1.79 4 4v8.45l2.068-1.93 1.364 1.46-4.432 4.14-4.432-4.14 1.364-1.46 2.068 1.93V8c0-1.1-.896-2-2-2z"
+                />
+              </svg>
+              <span id="retweets"></span>
+            </span>
+            <span class="action" id="action-like">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M16.697 5.5c-1.222-.06-2.679.51-3.89 2.16l-.805 1.09-.806-1.09C9.984 6.01 8.526 5.44 7.304 5.5c-1.79.07-3.357 1.062-4.047 2.679-.698 1.637-.154 3.601 1.591 5.55L12 21.25l7.152-7.903c1.745-1.949 2.289-3.913 1.591-5.55-.69-1.617-2.257-2.61-4.046-2.679z"
+                  id="like-icon"
+                />
+              </svg>
+              <span id="likes"></span>
+            </span>
+            <span class="action" id="action-views">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M8.75 21V3h2v18h-2zM18.75 21V8.55h2V21h-2z" />
+              </svg>
+              <span id="views"></span>
+            </span>
+            <span class="action" id="action-bookmark">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M4 4.5C4 3.12 5.119 2 6.5 2h11C18.881 2 20 3.12 20 4.5v18.44l-8-5.71-8 5.71V4.5z"
+                />
+              </svg>
+            </span>
+            <span class="action" id="action-share">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M12 2.59l5.7 5.7-1.41 1.42L13 6.41V16h-2V6.41l-3.29 3.3-1.41-1.42L12 2.59z"
+                />
+              </svg>
+            </span>
+          </div>
+        </div>
+      </div>
+    </article>
+  </body>
+</html>

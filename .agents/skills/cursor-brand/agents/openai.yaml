@@ -1,0 +1,4 @@
+interface:
+  display_name: "Cursor Brand"
+  short_description: "Cursor brand system and asset guide"
+  default_prompt: "Use $cursor-brand to create an on-brand Cursor event or social asset."

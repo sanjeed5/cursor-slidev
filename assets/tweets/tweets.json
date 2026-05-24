@@ -1,0 +1,62 @@
+[
+  {
+    "id": "2058396434538324392",
+    "handle": "@iAmRahulPatni",
+    "name": "Rahul Patni",
+    "text": "I'm pleasantly surprised by how good Composer 2.5 is.\n\nFeels like Opus 4.7 overthinks into making mistakes. Amazing workflow speed.",
+    "likes": 1,
+    "retweets": 0,
+    "url": "https://x.com/iAmRahulPatni/status/2058396434538324392",
+    "screenshot": "assets/tweets/iAmRahulPatni-324392.png"
+  },
+  {
+    "id": "2058463275587866689",
+    "handle": "@anguskeatinge",
+    "name": "Angus Keatinge",
+    "text": "@leerob composer 2.5 on cursor cli is dominating opus 4.7 on claude code\n\nfast mode completely changes the game",
+    "likes": 0,
+    "retweets": 0,
+    "url": "https://x.com/anguskeatinge/status/2058463275587866689",
+    "screenshot": "assets/tweets/anguskeatinge-866689.png"
+  },
+  {
+    "id": "2058441059404030246",
+    "handle": "@droidbuilds",
+    "name": "droidbuilds",
+    "text": "Cursor Composer 2.5 is my go-to right now 😅",
+    "likes": 0,
+    "retweets": 0,
+    "url": "https://x.com/droidbuilds/status/2058441059404030246",
+    "screenshot": "assets/tweets/droidbuilds-030246.png"
+  },
+  {
+    "id": "2058425544652521977",
+    "handle": "@livingdevops",
+    "name": "Akhilesh Mishra",
+    "text": "Cursor Composer 2.5 is really good.",
+    "likes": 14,
+    "retweets": 0,
+    "url": "https://x.com/livingdevops/status/2058425544652521977",
+    "screenshot": "assets/tweets/livingdevops-521977.png"
+  },
+  {
+    "id": "2056418797473640681",
+    "handle": "@mntruell",
+    "name": "Michael Truell",
+    "text": "Composer 2.5 is a significant step up from Composer 2.\n\nThis is the very start of our work with SpaceXAI. Hope to have more improvements out soon.",
+    "likes": 4815,
+    "retweets": 1028,
+    "url": "https://x.com/mntruell/status/2056418797473640681",
+    "screenshot": "assets/tweets/mntruell-640681.png"
+  },
+  {
+    "id": "2056780569380626686",
+    "handle": "@mntruell",
+    "name": "Michael Truell",
+    "text": "Composer 2.5 is now the most-chosen model in Cursor.\n\nWe're giving everyone 10x usage for the rest of the day. Enjoy!",
+    "likes": 3482,
+    "retweets": 246,
+    "url": "https://x.com/mntruell/status/2056780569380626686",
+    "screenshot": "assets/tweets/mntruell-626686.png"
+  }
+]

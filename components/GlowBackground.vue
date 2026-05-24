@@ -1,26 +1,19 @@
 <template>
-  <!-- Wrapper fills the entire slide canvas -->
   <div class="glow-wrapper w-full h-full relative">
-    <!-- Gradient layer fills wrapper -->
-    <div class="glow-bg" aria-hidden="true"></div>
-
-    <!-- Centered content -->
+    <div class="glow-bg" aria-hidden="true" />
     <div class="relative z-10 flex items-center justify-center h-full">
       <slot />
     </div>
   </div>
 </template>
 
-<script setup lang="ts">
-// No additional logic needed
-</script>
-
 <style scoped>
 .glow-wrapper {
   position: relative;
   width: 100%;
-  height: 100%; /* respect slide canvas height */
+  height: 100%;
   overflow: hidden;
+  background-color: #14120b;
 }
 
 .glow-bg {
@@ -33,29 +26,30 @@
 .glow-bg::before {
   content: "";
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 50%;
-  width: 200vmax;
-  height: 200vmax;
+  width: 120vmax;
+  height: 120vmax;
   transform: translate(-50%, -50%);
-  background: conic-gradient(from 0deg, #ff0080, #ff8c00, #40e0d0, #ff0080);
-  filter: blur(140px) saturate(1.4);
-  opacity: 0.7;
-  animation: subtleGlow 35s ease-in-out infinite alternate;
+  background: radial-gradient(
+    circle,
+    rgba(43, 41, 35, 0.55) 0%,
+    rgba(20, 18, 11, 0) 65%
+  );
+  opacity: 0.9;
 }
 
-@keyframes subtleGlow {
-  0% {
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 0.6;
-  }
-  50% {
-    transform: translate(-55%, -45%) scale(1.15);
-    opacity: 0.8;
-  }
-  100% {
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 0.6;
-  }
+.glow-bg::after {
+  content: "";
+  position: absolute;
+  bottom: -20%;
+  right: -10%;
+  width: 60vmax;
+  height: 60vmax;
+  background: radial-gradient(
+    circle,
+    rgba(245, 78, 0, 0.06) 0%,
+    rgba(20, 18, 11, 0) 70%
+  );
 }
-</style> 
+</style>

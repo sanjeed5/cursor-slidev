@@ -1,50 +1,48 @@
 # slidev-theme-cursor
 
-[![NPM version](https://img.shields.io/npm/v/slidev-theme-cursor?color=3AB9D4&label=)](https://www.npmjs.com/package/slidev-theme-cursor)
+Cursor-branded [Slidev](https://github.com/slidevjs/slidev) theme — dark palette, Cursor Gothic, custom layouts.
 
-A (...) theme for [Slidev](https://github.com/slidevjs/slidev).
+Used by the talk deck in the repo root (`slides.md`).
 
-<!--
-  Learn more about how to write a theme:
-  https://sli.dev/guide/write-theme.html
---->
+## Use in this repo
 
-<!--
-  run `npm run dev` to check out the slides for more details of how to start writing a theme
--->
+The root `package.json` links this theme locally:
 
-<!--
-  Put some screenshots here to demonstrate your theme
+```yaml
+theme: slidev-theme-cursor
+```
 
-  Live demo: [...]
--->
-
-## Install
-
-Add the following frontmatter to your `slides.md`. Start Slidev then it will prompt you to install the theme automatically.
-
-<pre><code>---
-theme: <b>cursor</b>
----</code></pre>
-
-Learn more about [how to use a theme](https://sli.dev/guide/theme-addon#use-theme).
+```bash
+pnpm install
+pnpm dev
+```
 
 ## Layouts
 
-This theme provides the following layouts:
+| Layout | Purpose |
+|--------|---------|
+| `cover` | Title slide shell |
+| `intro` | Section intro |
+| `presenter` | Speaker intro (used with `PresenterSlide.vue`) |
+| `visual` | Image-forward slides |
+| `end` | Closing slide (used with `EndSlide.vue`) |
 
-> TODO:
+Built-in Slidev layouts (`default`, `two-cols`, `full`, etc.) also work.
 
-## Components
+## Deck components
 
-This theme provides the following components:
+Slide content components live in the repo root `components/` directory (not in the theme package):
 
-> TODO:
+- `CoverHero`, `PresenterSlide`, `EndSlide`
+- `AgentChannels`, `ComposerStats`, `SocialGrid`, `VisualBullets`
+- `GlowBackground`
 
-## Contributing
+## Theme development
 
-- `npm install`
-- `npm run dev` to start theme preview of `example.md`
-- Edit the `example.md` and style to see the changes
-- `npm run export` to generate the preview PDF
-- `npm run screenshot` to generate the preview PNG
+```bash
+cd slidev-theme-cursor
+pnpm install
+pnpm dev    # previews example.md
+```
+
+Fonts and lockups: `assets/`

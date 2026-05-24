@@ -1,97 +1,277 @@
-/* Default styling for all slides */
-:root {
-  /* Colors */
-  --slidev-theme-primary-bg: #0F0F0F;
-  --slidev-theme-text-body: rgba(255, 255, 255, 0.8);
-  --slidev-theme-text-heading: #FFFFFF;
-  --slidev-theme-border-color: #252525;
-  --slidev-theme-card-bg: #171717;
-  --slidev-theme-accent-grey: #6E6E6E;
-
-  /* Typography */
-  --slidev-font-primary: "Inter", sans-serif;
-  --slidev-font-secondary: "Inter", sans-serif;
-  --slidev-font-mono: "monospace"; /* You might want to choose a specific mono font later */
+/* Cursor brand tokens — Sept 2025 guidelines */
+@font-face {
+  font-family: "Cursor Gothic";
+  src: url("../assets/fonts/CursorGothic-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: block;
 }
 
-/* Apply primary background to the presentation */
+@font-face {
+  font-family: "Cursor Gothic";
+  src: url("../assets/fonts/CursorGothic-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "Cursor Gothic";
+  src: url("../assets/fonts/CursorGothic-Italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "Cursor Gothic";
+  src: url("../assets/fonts/CursorGothic-BoldItalic.woff2") format("woff2");
+  font-weight: 700;
+  font-style: italic;
+  font-display: block;
+}
+
+:root {
+  --cursor-bg: #14120b;
+  --cursor-fg: #edecec;
+  --cursor-fg-muted: rgba(237, 236, 236, 0.6);
+  --cursor-fg-subtle: rgba(237, 236, 236, 0.4);
+  --cursor-card: #1b1913;
+  --cursor-card-01: #1d1b15;
+  --cursor-card-02: #201e18;
+  --cursor-card-03: #26241e;
+  --cursor-border: rgba(237, 236, 236, 0.1);
+  --cursor-accent: #f54e00;
+
+  --slidev-theme-primary-bg: var(--cursor-bg);
+  --slidev-theme-text-body: rgba(237, 236, 236, 0.8);
+  --slidev-theme-text-heading: var(--cursor-fg);
+  --slidev-theme-border-color: var(--cursor-border);
+  --slidev-theme-card-bg: var(--cursor-card);
+  --slidev-theme-accent-grey: rgba(237, 236, 236, 0.35);
+
+  --slidev-font-primary: "Cursor Gothic", system-ui, sans-serif;
+  --slidev-font-secondary: "Cursor Gothic", system-ui, sans-serif;
+  --slidev-font-mono: ui-monospace, "Cascadia Code", "Source Code Pro", monospace;
+}
+
 .slidev-layout {
-  background-color: var(--slidev-theme-primary-bg);
+  background-color: var(--cursor-bg);
   color: var(--slidev-theme-text-body);
   font-family: var(--slidev-font-secondary);
 }
 
-/* Heading styles */
-h1, h2 {
+h1,
+h2 {
   font-family: var(--slidev-font-primary);
-  font-weight: 700; /* Bold - Changed from 900 */
-  letter-spacing: -0.02em; /* -2% tracking */
-  color: var(--slidev-theme-text-heading);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--cursor-fg);
 }
 
-h3, h4 {
+h3,
+h4 {
   font-family: var(--slidev-font-secondary);
-  font-weight: 600; /* SemiBold */
+  font-weight: 700;
   letter-spacing: 0;
-  color: var(--slidev-theme-text-heading);
+  color: var(--cursor-fg);
 }
 
-/* Body text styles */
-p, li, td, th {
+p,
+li,
+td,
+th {
   font-family: var(--slidev-font-secondary);
-  font-weight: 400; /* Regular */
+  font-weight: 400;
   letter-spacing: 0;
 }
 
-/* Microcopy styles */
-.overline, small {
+small {
   font-family: var(--slidev-font-secondary);
-  font-weight: 500; /* Medium */
-  letter-spacing: 0.05em; /* +5% tracking */
-  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: var(--cursor-fg-subtle);
 }
 
-/* Links */
 a {
-  color: var(--slidev-theme-text-heading);
+  color: var(--cursor-fg);
   text-decoration: none;
   border-bottom: 1px solid var(--slidev-theme-accent-grey);
 }
 
-a:hover {
-  opacity: 0.8;
+a.cta-card,
+a.link-plain {
+  border-bottom: none;
 }
 
-/* Code blocks - basic styling, can be enhanced further */
-pre, code {
+a.link-plain:hover {
+  opacity: 0.85;
+  text-decoration: underline;
+  text-decoration-color: var(--slidev-theme-accent-grey);
+  text-underline-offset: 0.2em;
+}
+
+a:hover {
+  opacity: 0.85;
+}
+
+pre,
+code {
   font-family: var(--slidev-font-mono);
-  background-color: var(--slidev-theme-card-bg);
-  border: 1px solid var(--slidev-theme-border-color);
+  background-color: var(--cursor-card);
+  border: 1px solid var(--cursor-border);
   border-radius: 4px;
 }
 
-/* Tables - basic styling */
 table {
   width: 100%;
   border-collapse: collapse;
 }
 
-th, td {
-  border: 1px solid var(--slidev-theme-border-color);
+th,
+td {
+  border: 1px solid var(--cursor-border);
   padding: 8px;
   text-align: left;
 }
 
 th {
-  background-color: var(--slidev-theme-card-bg);
-  color: var(--slidev-theme-text-heading);
+  background-color: var(--cursor-card);
+  color: var(--cursor-fg);
 }
 
-/* Dividers */
 hr {
   border: none;
-  border-top: 1px solid var(--slidev-theme-border-color);
+  border-top: 1px solid var(--cursor-border);
   margin: 1em 0;
+}
+
+/* Brand utility classes for slide content */
+.text-muted {
+  color: var(--cursor-fg-muted);
+}
+
+.text-subtle {
+  color: var(--cursor-fg-subtle);
+}
+
+.border-subtle {
+  border-color: var(--cursor-border);
+}
+
+.bg-card {
+  background-color: var(--cursor-card);
+}
+
+.bg-card-02 {
+  background-color: var(--cursor-card-02);
+}
+
+.border-accent {
+  border-color: rgba(245, 78, 0, 0.4);
+}
+
+.product-shot {
+  width: 100%;
+  max-height: 58vh;
+  object-fit: contain;
+  border-radius: 0.75rem;
+  border: 1px solid var(--cursor-border);
+  background-color: var(--cursor-card);
+}
+
+.tip-box {
+  margin-top: 2rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--cursor-border);
+  background-color: var(--cursor-card);
+  color: rgba(237, 236, 236, 0.8);
+}
+
+.cta-card {
+  display: block;
+  padding: 1.25rem;
+  border-radius: 0.75rem;
+  border: 1px solid var(--cursor-border) !important;
+  border-bottom: 1px solid var(--cursor-border) !important;
+  background-color: var(--cursor-card);
+  text-decoration: none;
+  transition: background-color 0.15s ease;
+}
+
+.cta-card:hover {
+  background-color: var(--cursor-card-02);
+  opacity: 1;
+}
+
+.cta-card--accent {
+  border-color: rgba(245, 78, 0, 0.4) !important;
+  border-bottom-color: rgba(245, 78, 0, 0.4) !important;
+}
+
+.cta-card__title {
+  font-weight: 700;
+  font-size: 1.125rem;
+  color: var(--cursor-fg);
+}
+
+.cta-card__desc {
+  color: rgba(237, 236, 236, 0.7);
+}
+
+.platform-points {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.625rem;
+  max-width: 28rem;
+}
+
+.platform-points li {
+  position: relative;
+  padding-left: 1.25rem;
+  color: rgba(237, 236, 236, 0.85);
+  font-size: 1.0625rem;
+  line-height: 1.45;
+}
+
+.platform-points li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 0.375rem;
+  height: 0.375rem;
+  border-radius: 9999px;
+  background: #f54e00;
+}
+
+.slidev-layout.visual-slide h1 {
+  margin-bottom: 1.25rem;
+}
+
+.slidev-layout.visual-slide .visual-bullets {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 3.5rem;
+  row-gap: 2rem;
+  font-size: 1.125rem;
+  margin-bottom: 1rem;
+  max-width: 48rem;
+}
+
+.slidev-layout.visual-slide .visual-bullets--wide {
+  max-width: 56rem;
+}
+
+.slidev-layout.composer-social-slide h1 {
+  margin-bottom: 0.35rem;
+}
+
+.slidev-layout.composer-social-slide .social-grid {
+  max-height: min(56vh, 460px);
 }
 
 .slidev-layout.cover,
@@ -103,7 +283,8 @@ hr {
   }
 
   h1 + p {
-    @apply -mt-2 opacity-50 mb-4;
+    @apply -mt-2 mb-4;
+    color: var(--cursor-fg-muted);
   }
 
   p + h2,
