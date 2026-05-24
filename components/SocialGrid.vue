@@ -1,7 +1,12 @@
 <script setup lang="ts">
-defineProps<{
-  tweets: { screenshot: string; name: string }[]
-}>()
+import { defaultSocialTweets } from './social-slide'
+
+withDefaults(
+  defineProps<{
+    tweets?: { screenshot: string; name: string }[]
+  }>(),
+  { tweets: () => defaultSocialTweets },
+)
 </script>
 
 <template>

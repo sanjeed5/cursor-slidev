@@ -1,5 +1,5 @@
 ---
-title: What's New in Cursor
+title: What's New in Cursor May 2026
 info: |
   ## Cursor talk deck
 
@@ -17,7 +17,7 @@ drawings:
 ---
 
 <CoverHero
-  title="What's New in Cursor"
+  title="What's New in Cursor May 2026"
   name="Sanjeed"
   subtitle="AI engineer & consultant"
 />
@@ -78,12 +78,7 @@ class: composer-social-slide
 
 <p class="text-sm text-muted mb-3">Community reaction — not just the official announcement</p>
 
-<SocialGrid :tweets="[
-  { screenshot: './assets/tweets/social-elon-cursorbench.png', name: 'Elon Musk' },
-  { screenshot: './assets/tweets/social-elon-mntruell.png', name: 'Elon Musk' },
-  { screenshot: './assets/tweets/social-hoocrypto.png', name: 'Juampi' },
-  { screenshot: './assets/tweets/social-marclou.png', name: 'Marc Lou' },
-]" />
+<SocialGrid />
 
 ---
 layout: visual

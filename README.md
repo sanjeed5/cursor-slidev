@@ -43,6 +43,10 @@ Software Factory — live terminal demo in `demo/` (separate Node project from S
 
 Push to `main` → GitHub Pages (see `.github/workflows/deploy.yml`).
 
+**Live deck:** https://sanjeed5.github.io/cursor-slidev/
+
+Build uses `--base /cursor-slidev/` for GitHub Pages subpath hosting. For Cloudflare Pages or a root domain, use `pnpm build:root` instead.
+
 ## Agent context
 
 See [AGENTS.md](./AGENTS.md). Brand skill: `.agents/skills/cursor-brand/`.
