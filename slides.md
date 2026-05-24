@@ -94,7 +94,7 @@ layout: visual
 
 <p class="text-sm text-muted mb-4">Cmd/Ctrl+Shift+P → "Agents Window"</p>
 
-<img src="./assets/product/cloud-agents-handoff.jpg" alt="Agents Window" class="product-shot" />
+<img src="/product/cloud-agents-handoff.jpg" alt="Agents Window" class="product-shot" />
 
 ---
 layout: default
@@ -124,7 +124,7 @@ layout: visual
 
 <p class="text-sm text-muted mb-4">cursor.com/agents · @Cursor in Slack, GitHub, Linear, Jira</p>
 
-<img src="./assets/product/cloud-agents-pr.jpg" alt="Cloud agent PR output" class="product-shot" />
+<img src="/product/cloud-agents-pr.jpg" alt="Cloud agent PR output" class="product-shot" />
 
 ---
 layout: visual
@@ -140,7 +140,7 @@ layout: visual
 
 <p class="text-sm text-muted mb-4">cursor.com/automations · cursor.com/marketplace</p>
 
-<img src="./assets/product/automations-pr-routing.jpg" alt="Cursor Automations — PR routing workflow" class="product-shot" />
+<img src="/product/automations-pr-routing.jpg" alt="Cursor Automations — PR routing workflow" class="product-shot" />
 
 ---
 layout: visual
@@ -156,8 +156,8 @@ layout: visual
 <p class="text-sm text-muted mb-4">Live demo next</p>
 
 <div class="grid grid-cols-2 gap-3">
-  <img src="./assets/product/canvas-dashboard.jpg" alt="Canvas incident dashboard" class="product-shot" />
-  <img src="./assets/product/design-mode.jpg" alt="Design Mode visual editor" class="product-shot" />
+  <img src="/product/canvas-dashboard.jpg" alt="Canvas incident dashboard" class="product-shot" />
+  <img src="/product/design-mode.jpg" alt="Design Mode visual editor" class="product-shot" />
 </div>
 
 ---
@@ -201,7 +201,7 @@ class: px-16
 ---
 
 <a href="https://www.youtube.com/watch?v=rnDm57Py54A" target="_blank">
-  <img src="./assets/product/eric-factory-talk-thumb.jpg" alt="Eric Zakariasson — Build your own software factory" class="product-shot max-h-[72vh] w-full" />
+  <img src="/product/eric-factory-talk-thumb.jpg" alt="Eric Zakariasson — Build your own software factory" class="product-shot max-h-[72vh] w-full" />
 </a>
 
 ---

@@ -3,7 +3,7 @@
 PNG cards for the social slide (`SocialGrid` in `slides.md`).
 
 ```bash
-pnpm sync:social           # refresh assets/tweets/tweets.json from X
+pnpm sync:social           # refresh public/tweets/tweets.json from X
 pnpm render:tweets         # regenerate PNGs
 pnpm render:tweets:sample  # Marc Lou fixture — compare to a native X screenshot
 ```

@@ -7,19 +7,19 @@ Cursor talk deck (Slidev). Not event-specific.
 ## Presenter (do not change unless Sanjeed asks)
 
 - Name: Sanjeed
-- Photo: `assets/sanjeed.jpg`
+- Photo: `public/sanjeed.jpg`
 
-## Layout
+## Layout (Slidev standard)
 
 ```
 slides.md              ← talk content (source of truth)
-components/            ← Vue slide components (see list below)
-assets/product/        ← changelog/blog screenshots
-assets/tweets/         ← PNG cards + tweets.json (for scripts only)
+components/            ← Vue slide components
+public/                ← static assets (images, tweet PNGs, lockups)
 demo/                  ← separate Node project: live @cursor/sdk terminal demo
 scripts/               ← optional tweet refresh/render
+vite.config.ts         ← deploy base path (/cursor-slidev/ for GitHub Pages)
 .agents/skills/        ← agent skills (cursor-brand + slidev-*)
-skills-lock.json       ← pinned skill versions
+slidev-theme-cursor/   ← linked theme package
 ```
 
 ## Components (`components/`)
@@ -34,31 +34,37 @@ skills-lock.json       ← pinned skill versions
 | `VisualBullets.vue` | Bullets with icons |
 | `EndSlide.vue` | Closing / questions slide |
 | `GlowBackground.vue` | Animated gradient background (legacy) |
+| `asset-url.ts` | `asset()` helper — resolves `public/` paths with deploy base |
 
 ## Slide order (in slides.md)
 
 title → presenter → platform → **composer 2.5** → composer-social → Agents Window → planning → cloud agents → automations → canvas+design → SDK → factory arc → promos → thanks
 
-Social slide: first 4 entries in `SocialGrid` props in `slides.md`.
+Social slide: default tweets in `components/social-slide.ts`. Reorder by editing that file.
 
 ## Tweet pipeline
 
-- Data: `assets/tweets/tweets.json`
+- Data: `public/tweets/tweets.json`
 - `pnpm sync:social` — refresh from X API
-- `pnpm render:tweets` — Playwright → PNGs
-- Reorder or swap tweets by editing `SocialGrid` in `slides.md`
+- `pnpm render:tweets` — Playwright → PNGs in `public/tweets/`
+- Slide uses `SocialGrid` with bundled defaults from `social-slide.ts`
 
 Render gotchas: strip emoji in render script; avatars as base64 before screenshot; element clip not locator screenshot.
 
 ## SDK demo (`demo/`)
 
-Separate mini Node project (its own `package.json`) — not part of the Slidev app. Runs the Software Factory pattern live during the SDK slide.
+Separate mini Node project (its own `package.json`) — not part of the Slidev app.
 
 ```bash
 cd demo && npm install && npm run demo
 ```
 
 Requires `CURSOR_API_KEY`. Test before events.
+
+## Deploy
+
+- **GitHub Pages** (default): `pnpm build` → base `/cursor-slidev/` via `vite.config.ts`
+- **Root hosting** (Cloudflare Pages, custom domain): `SLIDEV_BASE=/ pnpm build`
 
 ## Promos
 

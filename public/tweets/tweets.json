@@ -7,7 +7,7 @@
     "likes": 1,
     "retweets": 0,
     "url": "https://x.com/iAmRahulPatni/status/2058396434538324392",
-    "screenshot": "assets/tweets/iAmRahulPatni-324392.png"
+    "screenshot": "public/tweets/iAmRahulPatni-324392.png"
   },
   {
     "id": "2058463275587866689",
@@ -17,7 +17,7 @@
     "likes": 0,
     "retweets": 0,
     "url": "https://x.com/anguskeatinge/status/2058463275587866689",
-    "screenshot": "assets/tweets/anguskeatinge-866689.png"
+    "screenshot": "public/tweets/anguskeatinge-866689.png"
   },
   {
     "id": "2058441059404030246",
@@ -27,7 +27,7 @@
     "likes": 0,
     "retweets": 0,
     "url": "https://x.com/droidbuilds/status/2058441059404030246",
-    "screenshot": "assets/tweets/droidbuilds-030246.png"
+    "screenshot": "public/tweets/droidbuilds-030246.png"
   },
   {
     "id": "2058425544652521977",
@@ -37,7 +37,7 @@
     "likes": 14,
     "retweets": 0,
     "url": "https://x.com/livingdevops/status/2058425544652521977",
-    "screenshot": "assets/tweets/livingdevops-521977.png"
+    "screenshot": "public/tweets/livingdevops-521977.png"
   },
   {
     "id": "2056418797473640681",
@@ -47,7 +47,7 @@
     "likes": 4815,
     "retweets": 1028,
     "url": "https://x.com/mntruell/status/2056418797473640681",
-    "screenshot": "assets/tweets/mntruell-640681.png"
+    "screenshot": "public/tweets/mntruell-640681.png"
   },
   {
     "id": "2056780569380626686",
@@ -57,6 +57,6 @@
     "likes": 3482,
     "retweets": 246,
     "url": "https://x.com/mntruell/status/2056780569380626686",
-    "screenshot": "assets/tweets/mntruell-626686.png"
+    "screenshot": "public/tweets/mntruell-626686.png"
   }
 ]

@@ -1,11 +1,8 @@
-import socialElonCursorbench from '../assets/tweets/social-elon-cursorbench.png'
-import socialElonMntruell from '../assets/tweets/social-elon-mntruell.png'
-import socialHoocrypto from '../assets/tweets/social-hoocrypto.png'
-import socialMarclou from '../assets/tweets/social-marclou.png'
+import { asset } from './asset-url'
 
 export const defaultSocialTweets = [
-  { screenshot: socialElonCursorbench, name: 'Elon Musk' },
-  { screenshot: socialElonMntruell, name: 'Elon Musk' },
-  { screenshot: socialHoocrypto, name: 'Juampi' },
-  { screenshot: socialMarclou, name: 'Marc Lou' },
+  { screenshot: asset('tweets/social-elon-cursorbench.png'), name: 'Elon Musk' },
+  { screenshot: asset('tweets/social-elon-mntruell.png'), name: 'Elon Musk' },
+  { screenshot: asset('tweets/social-hoocrypto.png'), name: 'Juampi' },
+  { screenshot: asset('tweets/social-marclou.png'), name: 'Marc Lou' },
 ]

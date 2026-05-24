@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Refresh assets/tweets/tweets.json from X search.
+ * Refresh public/tweets/tweets.json from X search.
  * Requires ~/.config/x-api/.env with X_BEARER_TOKEN
  *
  * Usage: pnpm sync:social
@@ -13,7 +13,7 @@ import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
-const TWEETS_PATH = join(ROOT, "assets/tweets/tweets.json");
+const TWEETS_PATH = join(ROOT, "public/tweets/tweets.json");
 const ENV_PATH = join(process.env.HOME || "", ".config/x-api/.env");
 
 async function loadToken() {
@@ -78,7 +78,7 @@ async function main() {
   });
 
   await writeFile(TWEETS_PATH, JSON.stringify(tweets, null, 2) + "\n", "utf8");
-  console.log(`Updated ${tweets.length} tweets in assets/tweets/tweets.json`);
+  console.log(`Updated ${tweets.length} tweets in public/tweets/tweets.json`);
   console.log("Run pnpm render:tweets, then update SocialGrid in slides.md if needed.");
 }
 

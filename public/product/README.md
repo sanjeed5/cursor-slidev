@@ -11,4 +11,4 @@ Screenshots from official Cursor blog posts (Mux video thumbnails) and changelog
 | `design-mode.jpg` | [cursor.com/blog/browser-visual-editor](https://cursor.com/blog/browser-visual-editor) | Canvas + Design Mode slide |
 | `eric-factory-talk-thumb.jpg` | Eric Zakariasson factory talk | Factory arc slide |
 
-Re-download: `curl -fsSL "https://image.mux.com/<id>/thumbnail.jpg?width=1400" -o assets/product/<name>.jpg`
+Re-download: `curl -fsSL "https://image.mux.com/<id>/thumbnail.jpg?width=1400" -o public/product/<name>.jpg`

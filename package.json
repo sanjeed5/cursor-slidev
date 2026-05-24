@@ -3,8 +3,7 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "build": "slidev build --base /cursor-slidev/",
-    "build:root": "slidev build",
+    "build": "slidev build",
     "dev": "slidev --open",
     "export": "slidev export slides.md --format png --dark --output slides-export",
     "export:pdf": "slidev export slides.md --dark --output cursor-community-talk",

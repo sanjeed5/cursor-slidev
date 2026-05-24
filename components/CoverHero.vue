@@ -1,5 +1,7 @@
 <script setup lang="ts">
-import lockupDark from '../assets/cursor-lockup-dark.svg'
+import { asset } from './asset-url'
+
+const lockupDark = asset('cursor-lockup-dark.svg')
 
 defineProps<{
   image?: string

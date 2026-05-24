@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * Renders X-style tweet cards as PNG screenshots.
- * Reads/writes assets/tweets/tweets.json.
+ * Reads/writes public/tweets/tweets.json.
  *
  * Usage:
  *   pnpm render:tweets
@@ -14,8 +14,8 @@ import { fileURLToPath } from "node:url";
 import { chromium } from "playwright";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
-const TWEETS_PATH = join(ROOT, "assets/tweets/tweets.json");
-const OUT_DIR = join(ROOT, "assets/tweets");
+const TWEETS_PATH = join(ROOT, "public/tweets/tweets.json");
+const OUT_DIR = join(ROOT, "public/tweets");
 const TEMPLATE_PATH = join(ROOT, "scripts/tweet-card-template.html");
 const ENV_PATH = join(process.env.HOME || "", ".config/x-api/.env");
 
@@ -217,7 +217,7 @@ async function main() {
       await writeFile(outPath, png);
 
       if (!sampleMode) {
-        tweet.screenshot = `assets/tweets/${filename}`;
+        tweet.screenshot = `public/tweets/${filename}`;
       }
       console.log(`✓ ${filename}`);
     }

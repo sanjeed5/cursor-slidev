@@ -1,7 +1,9 @@
 <script setup lang="ts">
-import photo from '../assets/sanjeed.jpg'
-import qrLinkedIn from '../assets/qr/linkedin.png'
-import qrX from '../assets/qr/x.png'
+import { asset } from './asset-url'
+
+const photo = asset('sanjeed.jpg')
+const qrLinkedIn = asset('qr/linkedin.png')
+const qrX = asset('qr/x.png')
 
 const social = [
   { label: 'LinkedIn', href: 'https://www.linkedin.com/in/msanjeed/', qr: qrLinkedIn },

@@ -12,16 +12,27 @@ pnpm dev
 
 Edit **`slides.md`** directly before a talk.
 
+## Project layout
+
+```
+slides.md           ← deck content
+components/         ← Vue slide components
+public/             ← images, tweet PNGs, lockups (Slidev static assets)
+slidev-theme-cursor/ ← linked theme
+demo/               ← live @cursor/sdk terminal demo (separate Node project)
+vite.config.ts      ← deploy base path
+```
+
 ## Presenter
 
 - **Sanjeed** — AI engineer & consultant
 
-Photo: `assets/sanjeed.jpg`
+Photo: `public/sanjeed.jpg`
 
 ## Social proof (optional refresh)
 
-Tweet data: `assets/tweets/tweets.json`  
-Slide layout: `SocialGrid` in `slides.md` (pick which 4 PNGs to show)
+Tweet data: `public/tweets/tweets.json`  
+Slide layout: `SocialGrid` (defaults in `components/social-slide.ts`)
 
 ```bash
 pnpm sync:social      # refresh tweets.json from X API
@@ -37,15 +48,18 @@ export CURSOR_API_KEY="..."
 npm run demo
 ```
 
-Software Factory — live terminal demo in `demo/` (separate Node project from Slidev). Supervisor + Plan-and-Execute + Reflexion via `@cursor/sdk`.
+Software Factory — Supervisor + Plan-and-Execute + Reflexion via `@cursor/sdk`.
 
 ## Deploy
 
-Push to `main` → GitHub Pages (see `.github/workflows/deploy.yml`).
-
 **Live deck:** https://sanjeed5.github.io/cursor-slidev/
 
-Build uses `--base /cursor-slidev/` for GitHub Pages subpath hosting. For Cloudflare Pages or a root domain, use `pnpm build:root` instead.
+Push to `main` → GitHub Pages (see `.github/workflows/deploy.yml`).
+
+| Host | Build command |
+|------|---------------|
+| GitHub Pages (`/cursor-slidev/`) | `pnpm build` (default) |
+| Cloudflare Pages / root domain | `SLIDEV_BASE=/ pnpm build` |
 
 ## Agent context
 
