@@ -29,11 +29,12 @@ In Cloudflare → **Workers & Pages** → your project → **Settings** → **Bu
 |---------|--------|
 | **Build command** | `pnpm run build` |
 | **Build output directory** | `dist` |
-| **Deploy command** | **leave empty** |
+| **Deploy command** | `pnpm run pages:deploy` |
+| **Node.js version** | `22` |
 
-Do **not** set a deploy command like `npx wrangler deploy` — that is for Workers, not static Pages. The build output (`dist/`) is published automatically.
+Use **`wrangler pages deploy`**, not `wrangler deploy` — the latter is for Workers and will fail.
 
-Node.js version: **20** (or 22). Root directory: `/` (repo root).
+`wrangler.toml` sets `pages_build_output_dir = "dist"`. Update `name` in that file if your CF project name differs.
 
 Custom domain: **cursor.sanjeed.in** → Pages → Custom domains.
 

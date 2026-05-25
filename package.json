@@ -12,7 +12,8 @@
     "render:tweets": "node scripts/render-tweet-screenshots.mjs",
     "render:tweets:sample": "node scripts/render-tweet-screenshots.mjs --sample",
     "cf:login": "wrangler login",
-    "cf:deploy": "node scripts/deploy-cf-pages.mjs"
+    "cf:deploy": "node scripts/deploy-cf-pages.mjs",
+    "pages:deploy": "wrangler pages deploy dist --commit-dirty=true"
   },
   "dependencies": {
     "@slidev/cli": "^51.7.1",

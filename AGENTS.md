@@ -16,7 +16,8 @@ Dashboard build settings:
 
 - Build command: `pnpm run build`
 - Output directory: `dist`
-- **Deploy command: empty** (never `wrangler deploy` — that breaks static Pages builds)
+- Deploy command: `pnpm run pages:deploy` (uses `wrangler pages deploy`, **not** `wrangler deploy`)
+- Node.js version: **22** (wrangler 4.x requirement)
 
 Optional manual upload: `pnpm cf:deploy`
 
