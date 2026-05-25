@@ -32,9 +32,9 @@ In Cloudflare → **Workers & Pages** → your project → **Settings** → **Bu
 | **Deploy command** | `pnpm run pages:deploy` |
 | **Node.js version** | `22` |
 
-Use **`wrangler pages deploy`**, not `wrangler deploy` — the latter is for Workers and will fail.
+Git-connected Pages **already publishes `dist/`** after the build step. The deploy command is a required no-op — do **not** run `wrangler pages deploy` here; the CI `CLOUDFLARE_API_TOKEN` lacks Pages upload permissions and will fail with error `10000`.
 
-`wrangler.toml` sets `pages_build_output_dir = "dist"`. Update `name` in that file if your CF project name differs.
+For manual uploads from your laptop, use `pnpm cf:deploy` (OAuth via `pnpm cf:login`).
 
 Custom domain: **cursor.sanjeed.in** → Pages → Custom domains.
 

@@ -13,7 +13,7 @@
     "render:tweets:sample": "node scripts/render-tweet-screenshots.mjs --sample",
     "cf:login": "wrangler login",
     "cf:deploy": "node scripts/deploy-cf-pages.mjs",
-    "pages:deploy": "wrangler pages deploy dist --commit-dirty=true"
+    "pages:deploy": "echo 'Git-connected Pages publishes dist/ after build'"
   },
   "dependencies": {
     "@slidev/cli": "^51.7.1",

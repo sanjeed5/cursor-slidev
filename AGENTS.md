@@ -16,7 +16,7 @@ Dashboard build settings:
 
 - Build command: `pnpm run build`
 - Output directory: `dist`
-- Deploy command: `pnpm run pages:deploy` (uses `wrangler pages deploy`, **not** `wrangler deploy`)
+- Deploy command: `pnpm run pages:deploy` (no-op — CF publishes `dist/` from build output; do not use wrangler in CI)
 - Node.js version: **22** (wrangler 4.x requirement)
 
 Optional manual upload: `pnpm cf:deploy`
