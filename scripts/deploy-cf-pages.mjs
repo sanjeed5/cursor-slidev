@@ -3,11 +3,10 @@
  * Deploy the Slidev deck to Cloudflare Pages via Wrangler.
  *
  * Prerequisites (once):
- *   pnpm cf:login          # OAuth in browser
- *   — or set CLOUDFLARE_API_TOKEN (+ optional CLOUDFLARE_ACCOUNT_ID)
+ *   pnpm cf:login
  *
  * Usage:
- *   pnpm cf:deploy
+ *   pnpm cf:deploy          # after editing slides.md
  */
 
 import { execSync, spawnSync } from "node:child_process";
@@ -128,8 +127,7 @@ try {
 console.log(`
 Done.
 
-  Production:  https://${PROJECT}.pages.dev
-  Custom:      https://${DOMAIN}  (after DNS/SSL propagate)
-
-Presenter:     https://${DOMAIN}/presenter
+  Audience:    https://${DOMAIN}
+  Presenter:   https://${DOMAIN}/presenter
+  Pages URL:   https://${PROJECT}.pages.dev
 `);

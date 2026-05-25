@@ -2,6 +2,16 @@
 
 Reusable Cursor talk deck. **Not event-specific.** Content lives in `slides.md` — no JSON sync layer.
 
+## Share
+
+| | URL |
+|--|-----|
+| **Audience** | https://cursor.sanjeed.in |
+| **Presenter** | https://cursor.sanjeed.in/presenter |
+| **Fallback** | https://cursor-slidev.pages.dev |
+
+Hosted on **Cloudflare Pages** (project: `cursor-slidev`).
+
 ## Present
 
 ```bash
@@ -10,17 +20,22 @@ pnpm dev
 # → http://localhost:3030
 ```
 
-Edit **`slides.md`** directly before a talk.
+Edit **`slides.md`** directly before a talk. Re-deploy when ready:
+
+```bash
+pnpm cf:deploy
+```
 
 ## Project layout
 
 ```
-slides.md           ← deck content
-components/         ← Vue slide components
-public/             ← images, tweet PNGs, lockups (Slidev static assets)
-slidev-theme-cursor/ ← linked theme
-demo/               ← live @cursor/sdk terminal demo (separate Node project)
-vite.config.ts      ← deploy base path (default `/` for Cloudflare Pages)
+slides.md              ← deck content
+components/            ← Vue slide components
+public/                ← images, tweet PNGs, lockups
+scripts/deploy-cf-pages.mjs ← CF Pages deploy
+slidev-theme-cursor/   ← linked theme
+demo/                  ← @cursor/sdk terminal demo (separate Node project)
+vite.config.ts         ← base `/` for Cloudflare Pages
 ```
 
 ## Presenter
@@ -52,43 +67,22 @@ Software Factory — Supervisor + Plan-and-Execute + Reflexion via `@cursor/sdk`
 
 ## Deploy (Cloudflare Pages)
 
-**Live deck:** https://cursor.sanjeed.in
-
-### CLI (recommended)
-
-One-time auth in your terminal:
+**First-time setup** (already done for this repo):
 
 ```bash
-pnpm install
-pnpm cf:login    # opens browser — approve Cloudflare OAuth
+pnpm cf:login    # once — Cloudflare OAuth in browser
+pnpm cf:deploy   # build + upload dist
 ```
 
-Deploy (build + upload + custom domain if token set):
-
-```bash
-pnpm cf:deploy
-```
-
-Optional env vars:
+**After slide edits:** run `pnpm cf:deploy` again.
 
 | Variable | Default | Purpose |
 |----------|---------|---------|
 | `CF_PAGES_PROJECT` | `cursor-slidev` | Pages project name |
-| `CF_CUSTOM_DOMAIN` | `cursor.sanjeed.in` | Custom domain |
-| `CLOUDFLARE_API_TOKEN` | — | Auto-add custom domain via API |
-| `CLOUDFLARE_ACCOUNT_ID` | from `wrangler whoami` | Required with API token |
+| `CF_CUSTOM_DOMAIN` | `cursor.sanjeed.in` | Custom domain (API bind) |
+| `CLOUDFLARE_API_TOKEN` | — | Optional: auto-add domain via API |
 
-Presenter mode: `https://cursor.sanjeed.in/presenter`
-
-### Dashboard alternative
-
-Connect Git in [Cloudflare Pages](https://dash.cloudflare.com) → build command `corepack enable && pnpm install && pnpm build` → output `dist` → add custom domain `cursor.sanjeed.in`.
-
-### Legacy GitHub Pages
-
-```bash
-pnpm build:gh   # base /cursor-slidev/ — old gh-pages subpath
-```
+Custom domain is configured in Cloudflare Pages → `cursor-slidev` → Custom domains.
 
 ## Agent context
 

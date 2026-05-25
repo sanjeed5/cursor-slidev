@@ -3,6 +3,7 @@ title: What's New in Cursor — May 2026
 info: |
   ## Cursor talk deck
 
+  Live: https://cursor.sanjeed.in
   Updated 2026-05-24
 theme: slidev-theme-cursor
 layout: full

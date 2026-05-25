@@ -4,10 +4,19 @@ Cursor talk deck (Slidev). Not event-specific.
 
 **Content:** edit `slides.md` directly. No `deck.json`, no generate step.
 
+## Share (live)
+
+- Audience: https://cursor.sanjeed.in
+- Presenter: https://cursor.sanjeed.in/presenter
+- Fallback: https://cursor-slidev.pages.dev
+
+Re-deploy after edits: `pnpm cf:deploy`
+
 ## Presenter (do not change unless Sanjeed asks)
 
 - Name: Sanjeed
 - Photo: `public/sanjeed.jpg`
+- Role: AI Engineer/Consultant
 
 ## Layout (Slidev standard)
 
@@ -15,11 +24,11 @@ Cursor talk deck (Slidev). Not event-specific.
 slides.md              ← talk content (source of truth)
 components/            ← Vue slide components
 public/                ← static assets (images, tweet PNGs, lockups)
+scripts/               ← tweet pipeline + deploy-cf-pages.mjs
 demo/                  ← separate Node project: live @cursor/sdk terminal demo
-scripts/               ← optional tweet refresh/render
-vite.config.ts         ← deploy base path (/cursor-slidev/ for GitHub Pages)
-.agents/skills/        ← agent skills (cursor-brand + slidev-*)
+vite.config.ts         ← base `/` (Cloudflare Pages)
 slidev-theme-cursor/   ← linked theme package
+.agents/skills/        ← agent skills (cursor-brand + slidev-*)
 ```
 
 ## Components (`components/`)
@@ -34,7 +43,7 @@ slidev-theme-cursor/   ← linked theme package
 | `VisualBullets.vue` | Bullets with icons |
 | `EndSlide.vue` | Closing / questions slide |
 | `GlowBackground.vue` | Animated gradient background (legacy) |
-| `asset-url.ts` | `asset()` helper — resolves `public/` paths with deploy base |
+| `asset-url.ts` | `asset()` helper — `public/` paths with deploy base |
 
 ## Slide order (in slides.md)
 
@@ -63,9 +72,7 @@ Requires `CURSOR_API_KEY`. Test before events.
 
 ## Deploy
 
-- **Primary:** Cloudflare Pages → https://cursor.sanjeed.in
-- **CLI:** `pnpm cf:login` once, then `pnpm cf:deploy`
-- **Legacy GitHub Pages subpath:** `pnpm build:gh`
+Cloudflare Pages via Wrangler: `pnpm cf:login` (once), then `pnpm cf:deploy`.
 
 ## Promos
 
