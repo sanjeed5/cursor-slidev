@@ -10,7 +10,9 @@ Cursor talk deck (Slidev). Not event-specific.
 - Presenter: https://cursor.sanjeed.in/presenter
 - Fallback: https://cursor-slidev.pages.dev
 
-Re-deploy after edits: `pnpm cf:deploy`
+Re-deploy after edits: push to `main` (GitHub Actions) or `pnpm cf:deploy` (manual Wrangler upload).
+
+The CF Pages project is **direct upload** — not connected via Cloudflare dashboard “Connect to Git”. CI uses `.github/workflows/cloudflare-pages.yml`.
 
 ## Presenter (do not change unless Sanjeed asks)
 
@@ -72,7 +74,12 @@ Requires `CURSOR_API_KEY`. Test before events.
 
 ## Deploy
 
-Cloudflare Pages via Wrangler: `pnpm cf:login` (once), then `pnpm cf:deploy`.
+Cloudflare Pages (**direct upload**, project `cursor-slidev`):
+
+- **Auto:** push to `main` → GitHub Actions (needs `CLOUDFLARE_API_TOKEN` + `CLOUDFLARE_ACCOUNT_ID` secrets)
+- **Manual:** `pnpm cf:login` once, then `pnpm cf:deploy`
+
+Not using Cloudflare dashboard Git integration — Wrangler uploads `dist/` instead.
 
 ## Promos
 

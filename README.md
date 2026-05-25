@@ -10,7 +10,7 @@ Reusable Cursor talk deck. **Not event-specific.** Content lives in `slides.md` 
 | **Presenter** | https://cursor.sanjeed.in/presenter |
 | **Fallback** | https://cursor-slidev.pages.dev |
 
-Hosted on **Cloudflare Pages** (project: `cursor-slidev`).
+Hosted on **Cloudflare Pages** (project: `cursor-slidev`, direct upload — not CF dashboard Git integration).
 
 ## Present
 
@@ -20,7 +20,7 @@ pnpm dev
 # → http://localhost:3030
 ```
 
-Edit **`slides.md`** directly before a talk. Re-deploy when ready:
+Edit **`slides.md`**, push to `main` — GitHub Actions deploys automatically (once secrets are set). Or deploy manually:
 
 ```bash
 pnpm cf:deploy
@@ -32,7 +32,8 @@ pnpm cf:deploy
 slides.md              ← deck content
 components/            ← Vue slide components
 public/                ← images, tweet PNGs, lockups
-scripts/deploy-cf-pages.mjs ← CF Pages deploy
+scripts/deploy-cf-pages.mjs ← manual CF deploy
+.github/workflows/cloudflare-pages.yml ← auto-deploy on push
 slidev-theme-cursor/   ← linked theme
 demo/                  ← @cursor/sdk terminal demo (separate Node project)
 vite.config.ts         ← base `/` for Cloudflare Pages
@@ -67,22 +68,27 @@ Software Factory — Supervisor + Plan-and-Execute + Reflexion via `@cursor/sdk`
 
 ## Deploy (Cloudflare Pages)
 
-**First-time setup** (already done for this repo):
+The Pages project uses **direct upload** (created via Wrangler CLI). It is **not** linked through Cloudflare’s “Connect to Git” UI — this repo deploys via GitHub Actions + Wrangler instead.
+
+### Auto-deploy on push (recommended)
+
+Add these [GitHub repo secrets](https://github.com/sanjeed5/cursor-slidev/settings/secrets/actions):
+
+| Secret | Value |
+|--------|--------|
+| `CLOUDFLARE_API_TOKEN` | API token with **Account → Cloudflare Pages → Edit** |
+| `CLOUDFLARE_ACCOUNT_ID` | From `pnpm exec wrangler whoami` |
+
+Push to `main` → `.github/workflows/cloudflare-pages.yml` builds and uploads `dist/`.
+
+### Manual deploy
 
 ```bash
 pnpm cf:login    # once — Cloudflare OAuth in browser
 pnpm cf:deploy   # build + upload dist
 ```
 
-**After slide edits:** run `pnpm cf:deploy` again.
-
-| Variable | Default | Purpose |
-|----------|---------|---------|
-| `CF_PAGES_PROJECT` | `cursor-slidev` | Pages project name |
-| `CF_CUSTOM_DOMAIN` | `cursor.sanjeed.in` | Custom domain (API bind) |
-| `CLOUDFLARE_API_TOKEN` | — | Optional: auto-add domain via API |
-
-Custom domain is configured in Cloudflare Pages → `cursor-slidev` → Custom domains.
+Custom domain `cursor.sanjeed.in` is set in Cloudflare Pages → `cursor-slidev` → Custom domains.
 
 ## Agent context
 
