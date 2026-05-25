@@ -8,9 +8,8 @@ Reusable Cursor talk deck. **Not event-specific.** Content lives in `slides.md` 
 |--|-----|
 | **Audience** | https://cursor.sanjeed.in |
 | **Presenter** | https://cursor.sanjeed.in/presenter |
-| **Fallback** | https://cursor-slidev.pages.dev |
 
-Hosted on **Cloudflare Pages** (project: `cursor-slidev`, direct upload — not CF dashboard Git integration).
+Hosted on **Cloudflare Pages** (Git-connected project).
 
 ## Present
 
@@ -20,9 +19,30 @@ pnpm dev
 # → http://localhost:3030
 ```
 
-Edit **`slides.md`**, push to `main` — GitHub Actions deploys automatically (once secrets are set). Or deploy manually:
+Edit **`slides.md`**, push to `main` — Cloudflare builds and deploys automatically.
+
+## Deploy (Cloudflare Pages + GitHub)
+
+In Cloudflare → **Workers & Pages** → your project → **Settings** → **Build**:
+
+| Setting | Value |
+|---------|--------|
+| **Build command** | `pnpm run build` |
+| **Build output directory** | `dist` |
+| **Deploy command** | **leave empty** |
+
+Do **not** set a deploy command like `npx wrangler deploy` — that is for Workers, not static Pages. The build output (`dist/`) is published automatically.
+
+Node.js version: **20** (or 22). Root directory: `/` (repo root).
+
+Custom domain: **cursor.sanjeed.in** → Pages → Custom domains.
+
+### Manual deploy (optional)
+
+If you ever need to upload without Git:
 
 ```bash
+pnpm cf:login
 pnpm cf:deploy
 ```
 
@@ -32,11 +52,9 @@ pnpm cf:deploy
 slides.md              ← deck content
 components/            ← Vue slide components
 public/                ← images, tweet PNGs, lockups
-scripts/deploy-cf-pages.mjs ← manual CF deploy
-.github/workflows/cloudflare-pages.yml ← auto-deploy on push
+wrangler.toml          ← Pages output dir hint (dist/)
 slidev-theme-cursor/   ← linked theme
 demo/                  ← @cursor/sdk terminal demo (separate Node project)
-vite.config.ts         ← base `/` for Cloudflare Pages
 ```
 
 ## Presenter
@@ -47,49 +65,19 @@ Photo: `public/sanjeed.jpg`
 
 ## Social proof (optional refresh)
 
-Tweet data: `public/tweets/tweets.json`  
-Slide layout: `SocialGrid` (defaults in `components/social-slide.ts`)
-
 ```bash
-pnpm sync:social      # refresh tweets.json from X API
+pnpm sync:social      # refresh public/tweets/tweets.json from X API
 pnpm render:tweets    # regenerate PNG cards (Playwright)
 ```
 
 ## SDK live demo
 
 ```bash
-cd demo
-npm install
-export CURSOR_API_KEY="..."
-npm run demo
+cd demo && npm install && npm run demo
 ```
 
-Software Factory — Supervisor + Plan-and-Execute + Reflexion via `@cursor/sdk`.
-
-## Deploy (Cloudflare Pages)
-
-The Pages project uses **direct upload** (created via Wrangler CLI). It is **not** linked through Cloudflare’s “Connect to Git” UI — this repo deploys via GitHub Actions + Wrangler instead.
-
-### Auto-deploy on push (recommended)
-
-Add these [GitHub repo secrets](https://github.com/sanjeed5/cursor-slidev/settings/secrets/actions):
-
-| Secret | Value |
-|--------|--------|
-| `CLOUDFLARE_API_TOKEN` | API token with **Account → Cloudflare Pages → Edit** |
-| `CLOUDFLARE_ACCOUNT_ID` | From `pnpm exec wrangler whoami` |
-
-Push to `main` → `.github/workflows/cloudflare-pages.yml` builds and uploads `dist/`.
-
-### Manual deploy
-
-```bash
-pnpm cf:login    # once — Cloudflare OAuth in browser
-pnpm cf:deploy   # build + upload dist
-```
-
-Custom domain `cursor.sanjeed.in` is set in Cloudflare Pages → `cursor-slidev` → Custom domains.
+Requires `CURSOR_API_KEY`.
 
 ## Agent context
 
-See [AGENTS.md](./AGENTS.md). Brand skill: `.agents/skills/cursor-brand/`.
+See [AGENTS.md](./AGENTS.md).
