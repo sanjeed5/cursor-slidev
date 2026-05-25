@@ -16,7 +16,7 @@ Dashboard build settings:
 
 - Build command: `pnpm run build`
 - Output directory: `dist`
-- Deploy command: `pnpm run pages:deploy` (no-op — CF publishes `dist/` from build output; do not use wrangler in CI)
+- Deploy: Cloudflare Workers static assets (`wrangler.toml` → `dist/`). Git via dashboard **Import a repository**; build `pnpm run build`, deploy `pnpm exec wrangler deploy`.
 - Node.js version: **22** (wrangler 4.x requirement)
 
 Optional manual upload: `pnpm cf:deploy`

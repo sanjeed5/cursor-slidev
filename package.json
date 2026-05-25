@@ -3,7 +3,7 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "build": "slidev build",
+    "build": "slidev build && rm -f dist/_redirects",
     "build:gh": "SLIDEV_BASE=/cursor-slidev/ slidev build",
     "dev": "slidev --open",
     "export": "slidev export slides.md --format png --dark --output slides-export",
@@ -12,8 +12,8 @@
     "render:tweets": "node scripts/render-tweet-screenshots.mjs",
     "render:tweets:sample": "node scripts/render-tweet-screenshots.mjs --sample",
     "cf:login": "wrangler login",
-    "cf:deploy": "node scripts/deploy-cf-pages.mjs",
-    "pages:deploy": "echo 'Git-connected Pages publishes dist/ after build'"
+    "cf:deploy": "pnpm build && wrangler deploy",
+    "deploy": "wrangler deploy"
   },
   "dependencies": {
     "@slidev/cli": "^51.7.1",
