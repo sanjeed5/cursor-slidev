@@ -8,18 +8,26 @@ Cursor talk deck (Slidev). Not event-specific.
 
 - Audience: https://cursor.sanjeed.in
 - Presenter: https://cursor.sanjeed.in/presenter
-- Fallback: https://cursor-slidev.pages.dev
+- Fallback: https://cursor-slidev.sanjeed5.workers.dev
 
-Re-deploy after edits: push to `main` (Cloudflare Pages Git integration).
+Re-deploy after edits: push to `main` (Cloudflare **Workers Builds** — dashboard **Import a repository**, not Hello World template).
 
-Dashboard build settings:
+### Cloudflare build settings
 
-- Build command: `pnpm run build`
-- Output directory: `dist`
-- Deploy: Cloudflare Workers static assets (`wrangler.toml` → `dist/`). Git via dashboard **Import a repository**; build `pnpm run build`, deploy `pnpm exec wrangler deploy`.
-- Node.js version: **22** (wrangler 4.x requirement)
+| Setting | Value |
+|---------|--------|
+| Build command | `pnpm run build` |
+| Deploy command | `pnpm exec wrangler deploy` |
+| Node.js | `22` |
+| Worker name | `cursor-slidev` (must match `wrangler.toml`) |
 
-Optional manual upload: `pnpm cf:deploy`
+No separate Pages tab in dashboard — static sites deploy as **Workers with static assets**.
+
+`wrangler.toml` serves `./dist` with SPA fallback (`not_found_handling = "single-page-application"`).
+
+**Build gotcha:** `pnpm run build` runs `slidev build && rm -f dist/_redirects`. Slidev emits `_redirects` which breaks Workers deploy (infinite loop with SPA config). Do not add `public/_redirects` back.
+
+Optional manual upload: `pnpm cf:deploy` (`pnpm build && wrangler deploy`).
 
 ## Presenter (do not change unless Sanjeed asks)
 
@@ -33,9 +41,10 @@ Optional manual upload: `pnpm cf:deploy`
 slides.md              ← talk content (source of truth)
 components/            ← Vue slide components
 public/                ← static assets (images, tweet PNGs, lockups)
-scripts/               ← tweet pipeline + deploy-cf-pages.mjs
+scripts/               ← tweet pipeline
 demo/                  ← separate Node project: live @cursor/sdk terminal demo
-vite.config.ts         ← base `/` (Cloudflare Pages)
+vite.config.ts         ← base `/` (root hosting)
+wrangler.toml          ← Worker name + [assets] directory dist/
 slidev-theme-cursor/   ← linked theme package
 .agents/skills/        ← agent skills (cursor-brand + slidev-*)
 ```
