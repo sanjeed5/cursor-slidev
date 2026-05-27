@@ -18,21 +18,33 @@ const social = [
 
       <div class="presenter-body">
         <h1 class="presenter-name">Sanjeed</h1>
-        <p class="presenter-role">AI Engineer/Consultant</p>
+        <p class="presenter-role">Cursor Community · South Asia Lead</p>
+        <p class="presenter-arc">
+          <span class="presenter-arc-edu">IIT Madras</span>
+          <span class="presenter-arc-sep">·</span>
+          <span>Engineer</span>
+          <span class="presenter-arc-sep">→</span>
+          <span>PM</span>
+          <span class="presenter-arc-sep">→</span>
+          <span>AI Consultant</span>
+        </p>
         <a href="https://sanjeed.in" target="_blank" class="presenter-site link-plain">sanjeed.in</a>
       </div>
 
       <div class="presenter-social">
-        <a
-          v-for="item in social"
-          :key="item.label"
-          :href="item.href"
-          target="_blank"
-          class="presenter-social-link link-plain"
-        >
-          <img :src="item.qr" :alt="item.label" class="presenter-qr" />
-          <span>{{ item.label }}</span>
-        </a>
+        <p class="presenter-social-caption">Follow for AI pro tips</p>
+        <div class="presenter-social-links">
+          <a
+            v-for="item in social"
+            :key="item.label"
+            :href="item.href"
+            target="_blank"
+            class="presenter-social-link link-plain"
+          >
+            <img :src="item.qr" :alt="item.label" class="presenter-qr" />
+            <span>{{ item.label }}</span>
+          </a>
+        </div>
       </div>
     </div>
   </div>
@@ -89,9 +101,29 @@ const social = [
   line-height: 1.35;
 }
 
+.presenter-arc {
+  margin: 0.85rem 0 0;
+  font-size: 0.9375rem;
+  color: rgba(237, 236, 236, 0.6);
+  line-height: 1.5;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  align-items: center;
+}
+
+.presenter-arc-sep {
+  color: rgba(237, 236, 236, 0.35);
+}
+
+.presenter-arc-edu {
+  color: rgba(237, 236, 236, 0.78);
+  font-weight: 500;
+}
+
 .presenter-site {
   display: inline-block;
-  margin-top: 1.25rem;
+  margin-top: 1rem;
   font-size: 1.0625rem;
   font-weight: 600;
   color: #edecec;
@@ -101,8 +133,23 @@ const social = [
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
-  padding-left: 0.5rem;
+  padding-left: 1rem;
   border-left: 1px solid rgba(237, 236, 236, 0.08);
+  max-width: 11rem;
+}
+
+.presenter-social-caption {
+  margin: 0 0 0.25rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: rgba(237, 236, 236, 0.7);
+  line-height: 1.3;
+}
+
+.presenter-social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
 .presenter-social-link {

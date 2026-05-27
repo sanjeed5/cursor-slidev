@@ -4,9 +4,9 @@ import { asset } from './asset-url'
 const lockupDark = asset('cursor-lockup-dark.svg')
 
 const links = [
-  { label: 'Changelog', href: 'https://cursor.com/changelog' },
   { label: 'Docs', href: 'https://cursor.com/docs' },
   { label: 'Community', href: 'https://cursor.com/community' },
+  { label: 'Changelog', href: 'https://cursor.com/changelog' },
 ]
 </script>
 
@@ -33,7 +33,7 @@ const links = [
       </nav>
 
       <p class="end-slide__footer">
-        Sanjeed
+        <a href="https://sanjeed.in" target="_blank" class="link-plain">sanjeed.in</a>
       </p>
     </div>
   </div>

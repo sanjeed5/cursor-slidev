@@ -1,6 +1,6 @@
 # Cursor talk deck (Slidev)
 
-Reusable Cursor talk deck. **Not event-specific.** Content lives in `slides.md` — no JSON sync layer.
+Reusable Cursor talk deck. **Not event-specific.** Content lives in `slides.md`, no JSON sync layer.
 
 ## Share
 
@@ -19,11 +19,11 @@ pnpm dev
 # → http://localhost:3030
 ```
 
-Edit **`slides.md`**, push to `main` — Cloudflare builds and deploys automatically (once Git is connected).
+Edit **`slides.md`**, push to `main`. Cloudflare builds and deploys automatically (once Git is connected).
 
 ## Deploy (Cloudflare Workers + GitHub)
 
-Cloudflare merged Pages into Workers. There is **no separate Pages tab** — use **Import a repository**.
+Cloudflare merged Pages into Workers. There is **no separate Pages tab**. Use **Import a repository**.
 
 ### One-time dashboard setup
 
